@@ -11,7 +11,7 @@
 				<p>Email : <span>{{current_user.email}}</span></p>
 				<p>Joined Date : <span>{{ current_user.join_date.strftime("%b %d, %Y") }}</span></p>
 				<p>Total Notes : <span>{{ number_of_notes }}</span></p>
-				<p>Last Login Date and Time : <span>{{ current_user.last_login_dt.strftime("%b %d, %Y , %H:%M:%S") }}</span></p>
+				<p>Last Login Date and Time : <span>{{ current_user.last_login_dt.strftime("%b %d, %Y , %I:%M:%S") }}</span></p>
 				<a href="#">Change Password</a>
 			</div>
 </div>
