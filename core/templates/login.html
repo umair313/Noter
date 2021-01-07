@@ -1,0 +1,31 @@
+{% extends "default.html"%}
+{% block content%}
+<div class="loginform">
+			<form method="POST" action="">
+				
+					<legend>User Login</legend>
+
+					<div class="formgroup">
+					<label id="inputlabel">Email</label>
+					<input type="email" name="email" id="input" required>
+					{% if error['user'] %}
+							<small class="form-error">Email is not registered</small>		
+						{% endif %}
+				</div>
+				<div class="formgroup">
+					<label id="inputlabel">Password</label>
+					<input type="Password" name="password" id="input">
+					{% if error['password'] %}
+							<small class="form-error">incorrect password</small>		
+					{% endif %}
+
+				</div>
+				<div class="formgroup">
+					<button class="btn btn-primary"type="submit">Login</button>
+					<p>Forget Password <a href="{{ url_for('reset_password_request')}}">Reset here</a></p>
+					<p>Did not have account? <a href="{{ url_for('register') }}">Register here</a></p>
+
+				</div>
+			</form>
+		</div>
+{% endblock content%}

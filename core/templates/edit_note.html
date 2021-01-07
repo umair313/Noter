@@ -1,0 +1,21 @@
+{% extends "default.html"%}
+{% block content%}
+<div class="newnoteform">
+			<form method="POST" action="{{ url_for('edit_note',id=note.id,title=note.title) }}">
+				
+					<legend>Create New Note</legend>
+					<div class="formgroup">
+					<label id="inputlabel">Title</label><br>
+					<input type="title" name="notetitle" id="input" value="{{note.title}}">
+				</div>
+				<div class="formgroup">
+					<label id="inputlabel">Content</label><br>
+					<textarea id="textarea" name="notecontent">{{note.content}}</textarea>
+				</div>
+				<div class="formgroup">
+					<button class="btn btn-primary"type="submit">Save Note</button>
+				</div>
+			</form>
+		</div>
+
+{% endblock content%}

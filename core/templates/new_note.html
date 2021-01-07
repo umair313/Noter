@@ -1,0 +1,21 @@
+{% extends "default.html"%}
+{% block content%}
+<div class="newnoteform">
+			<form method="POST" action="">
+				
+					<legend>Create New Note</legend>
+					<div class="formgroup">
+					<label id="inputlabel">Title</label><br>
+					<input type="title" name="notetitle" id="input" required>
+				</div>
+				<div class="formgroup">
+					<label id="inputlabel">Content</label><br>
+					<textarea id="textarea" name="notecontent" required></textarea>
+				</div>
+				<div class="formgroup">
+					<button class="btn btn-primary"type="submit">Create</button>
+				</div>
+			</form>
+		</div>
+
+{% endblock content%}
