@@ -1,7 +1,7 @@
 {% extends "default.html"%}
 {% block content%}
 <div class="newnoteform">
-			<form method="POST" action="{{ url_for('edit_note',id=note.id,title=note.title) }}">
+			<form method="POST" action="{{ url_for('notes.edit_note',id=note.id,title=note.title) }}">
 				
 					<legend>Create New Note</legend>
 					<div class="formgroup">

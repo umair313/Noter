@@ -8,8 +8,7 @@ import os
 app = Flask(__name__)
 
 app.config.from_object(Config)
-# app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///note.db"
+
 
 bcrypt=Bcrypt(app)
 db=SQLAlchemy(app)

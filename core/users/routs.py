@@ -2,14 +2,14 @@ from datetime import datetime
 from flask import render_template,redirect,url_for,request,Blueprint
 from flask_login import current_user,login_user,login_required,logout_user
 from core.models import Users,Notes
-from core import app,db,bcrypt
+from core import db,bcrypt
 
 noter_users=Blueprint('users',__name__)
 
-@app.route('/login',methods=["POST","GET"])
+@noter_users.route('/login',methods=["POST","GET"])
 def login():
 	if current_user.is_authenticated:
-		return redirect(url_for('notes'))
+		return redirect(url_for('notes.notes'))
 	error = {
 	"user" : False,
 	"password" : False
@@ -31,10 +31,10 @@ def login():
 	return render_template("login.html",title= "Login - Noter" ,error=error)
 
 
-@app.route('/register',methods=["POST","GET"])
+@noter_users.route('/register',methods=["POST","GET"])
 def register():
 	if current_user.is_authenticated:
-		return redirect(url_for('notes'))
+		return redirect(url_for('notes.notes'))
 	error = {
 	"email": False,
 	"username":False,
@@ -55,21 +55,21 @@ def register():
 			user = Users(username=username,email=email,password=hashed_password)
 			db.session.add(user)
 			db.session.commit()
-			return redirect(url_for('login'))
+			return redirect(url_for('users.login'))
 	return render_template("register.html",title= "Register - Noter",error=error)
 
-@app.route('/profile',methods=["POST","GET"])
+@noter_users.route('/profile',methods=["POST","GET"])
 @login_required
 def profile():
 
 	if not current_user.is_authenticated:
-		return redirect(url_for('login'))
+		return redirect(url_for('users.login'))
 	notes = Notes.query.filter_by(user_id=current_user.id).order_by(Notes.cd.desc())
 	numberOfNotes=notes.count()
 	return render_template("profile.html",title = "Profile - Noter",number_of_notes=numberOfNotes)
 
 # reset password request
-@app.route('/reset_password_request',methods=['POST',"GET"])
+@noter_users.route('/reset_password_request',methods=['POST',"GET"])
 def reset_password_request():
 	error = {
 	"email": False
@@ -82,13 +82,13 @@ def reset_password_request():
 		user = Users.query.filter_by(email=email).first()
 		if user:
 			token = user.gen_token()
-			data['link'] = f"{url_for('reset_password',token=token,_external=True)}"
+			data['link'] = f"{url_for('users.reset_password',token=token,_external=True)}"
 			return render_template('go_to_reset_password.html',data=data)
 		else: error["email"]=True
 	return render_template('reset_password_request.html',title="Reset Password Request",error=error,data=data)
 
 
-@app.route('/reset_password/<token>',methods=["GET","POST"])
+@noter_users.route('/reset_password/<token>',methods=["GET","POST"])
 def reset_password(token):
 	error={
 	'invalid':False,
@@ -102,12 +102,12 @@ def reset_password(token):
 			password = request.form['password']
 			user.password = bcrypt.generate_password_hash(password).decode("utf-8")
 			db.session.commit()
-			return redirect(url_for('login'))
+			return redirect(url_for('users.login'))
 		else: 
 			error["password"]=True
 	return	render_template("reset_password.html",title="Reset Password",error=error)
 
-@app.route('/logout')
+@noter_users.route('/logout')
 def logout():
 	logout_user()
-	return redirect(url_for('login'))	
+	return redirect(url_for('users.login'))	

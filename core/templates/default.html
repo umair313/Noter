@@ -11,17 +11,17 @@
 	
 <body>
 	<header>
-		<a href="{{url_for('home')}}"><h2>Noter</h2></a>
+		<a href="{{url_for('main.home')}}"><h2>Noter</h2></a>
 		<nav>
 			<ul>
 				{% if current_user.is_authenticated %}
-				<li><a href="{{url_for('new_note') }}">New Note</a></li>
-				<li><a href="{{url_for('notes') }}">Your Notes</a></li>
-				<li><a href="{{url_for('profile') }}">Profile</a></li>
-				<li><a href="{{url_for('logout') }}">Logout</a></li>
+				<li><a href="{{url_for('notes.new_note') }}">New Note</a></li>
+				<li><a href="{{url_for('notes.notes') }}">Your Notes</a></li>
+				<li><a href="{{url_for('users.profile') }}">Profile</a></li>
+				<li><a href="{{url_for('users.logout') }}">Logout</a></li>
 				{%else%}
-				<li><a href="{{url_for('login') }}">Login</a></li>
-				<li><a href="{{url_for('register') }}">Register</a></li>
+				<li><a href="{{url_for('users.login') }}">Login</a></li>
+				<li><a href="{{url_for('users.register') }}">Register</a></li>
 				{%endif%}
 				
 			</ul>
