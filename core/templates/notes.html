@@ -10,7 +10,7 @@
 					<th>Action</th>
 				</tr>
 				
-				{%if notes.total %}
+				{% if count >0 %}
 					<tr>
 					<td id ="createnote" colspan="5">
 						<a class="action-btn btn-newnote" href="{{url_for('notes.new_note')}}">Create note</a>

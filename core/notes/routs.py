@@ -10,7 +10,8 @@ noter_notes= Blueprint('notes',__name__)
 @login_required
 def notes():
 	notes = Notes.query.filter_by(user_id=current_user.id).order_by(Notes.cd.desc())
-	return render_template("notes.html",title = "All Notes - Noter",notes=notes)
+	number_of_notes = notes.count()
+	return render_template("notes.html",title = "All Notes - Noter",notes=notes,count=number_of_notes)
 
 @noter_notes.route('/create/note',methods=["POST","GET"])
 @login_required
