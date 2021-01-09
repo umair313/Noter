@@ -109,7 +109,18 @@ def reset_password(token):
 # route for change user password
 @noter_users.route('/change_password',methods=["GET","POST"])
 def change_password():
-	return render_template("change_password",title="Change Password")
+	error={
+	'password':False
+	}
+	user = Users.query.filter_by(id=current_user.id).first()
+	if request.method== "POST":
+		if request.form['password'] == request.form["confirm_password"]:
+			password = request.form['password']
+			user.password = bcrypt.generate_password_hash(password).decode("utf-8")
+			db.session.commit()
+			return redirect(url_for('users.profile'))
+		else: error['password']=True
+	return render_template("change_password.html",title="Change Password" ,error=error)
 
 @noter_users.route('/logout')
 def logout():
