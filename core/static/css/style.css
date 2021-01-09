@@ -221,11 +221,8 @@ border:1px solid #b2bec3;
 
 .newnoteform{
 	width: 50%;
-	margin: 0 auto;
-	position: absolute;
+	margin: 10px auto;
 	padding: 5px;
-	top:20%;
-	left: 15%;
 	box-shadow: 0 2px 20px rgba(0,0,0,0.4);
 	background: #dcdde1;
 }
