@@ -58,10 +58,9 @@ def register():
 			return redirect(url_for('users.login'))
 	return render_template("register.html",title= "Register - Noter",error=error)
 
-@noter_users.route('/profile',methods=["POST","GET"])
+@noter_users.route('/profile',methods=["GET"])
 @login_required
 def profile():
-
 	if not current_user.is_authenticated:
 		return redirect(url_for('users.login'))
 	notes = Notes.query.filter_by(user_id=current_user.id).order_by(Notes.cd.desc())
@@ -106,6 +105,11 @@ def reset_password(token):
 		else: 
 			error["password"]=True
 	return	render_template("reset_password.html",title="Reset Password",error=error)
+
+# route for change user password
+@noter_users.route('/change_password',methods=["GET","POST"])
+def change_password():
+	return render_template("change_password",title="Change Password")
 
 @noter_users.route('/logout')
 def logout():
