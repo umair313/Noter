@@ -30,6 +30,7 @@ you can install all of them by in from terminal using command :
 
 to run this you may need to set an environment variable `SECRET_KEY` and you can generate secret 
 key with `screts` module in python or any other of your likes.
+You may also do `export SECRET_KEY="testing"` for testing purpose
 and set variable `FLASK_APP=run.py`.
 
 
