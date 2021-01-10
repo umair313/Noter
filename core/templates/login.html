@@ -9,14 +9,14 @@
 					<label id="inputlabel">Email</label>
 					<input type="email" name="email" id="input" required>
 					{% if error['user'] %}
-							<small class="form-error">Email is not registered</small>		
+							<small class="form-error">Email or password is incorrect</small>		
 						{% endif %}
 				</div>
 				<div class="formgroup">
 					<label id="inputlabel">Password</label>
 					<input type="Password" name="password" id="input">
 					{% if error['password'] %}
-							<small class="form-error">incorrect password</small>		
+							<small class="form-error">Email or password is incorrect</small>		
 					{% endif %}
 
 				</div>
