@@ -33,4 +33,9 @@ def create_app(config_class=Config):
 
 	return app
 
+def create_db(app,db):
+	app.app_context().push()
+	db.create_all()
+
+
 
