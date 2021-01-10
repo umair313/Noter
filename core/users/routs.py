@@ -84,7 +84,7 @@ def reset_password_request():
 			token = user.gen_token()
 			data['link'] = f"{url_for('users.reset_password',token=token,_external=True)}"
 			data['email'] = email
-			return render_template('go_to_reset_password.html',data=data)
+			return render_template('go_to_reset_password.html',title= "Reset Password",data=data)
 		else: error["email"]=True
 	return render_template('reset_password_request.html',title="Reset Password Request",error=error,data=data)
 
