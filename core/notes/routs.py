@@ -17,8 +17,9 @@ def notes():
 @login_required
 def new_note():
 	if request.method== "POST":
-		title = request.form["notetitle"]
+		title = request.form["notetitle"].replace(" ","-")
 		content=request.form["notecontent"]
+
 		note = Notes(title=title,content=content,user_id=current_user.id)
 		db.session.add(note)
 		db.session.commit()
@@ -46,7 +47,7 @@ def edit_note(id,title):
 	if not note:
 		return redirect(url_for('notes.notes'))
 	elif request.method=="POST":
-		note.title = request.form["notetitle"]
+		note.title = request.form["notetitle"].replace(' ','-')
 		note.content=request.form["notecontent"]
 		note.md=datetime.utcnow()
 		db.session.commit()
