@@ -7,8 +7,9 @@
 }
 html,body{
 	font-family: lato;
+	font-size: 12px;
 	line-height: 1.6;
-	background: #dfe6e9;
+	background: #F6F8FA;
 	width: 100%;
 	height: 100%;
 
@@ -75,7 +76,13 @@ nav ul a:hover{
 	background: #95a5a6;
 	width: 40%;
 	position: absolute;
-	box-shadow: 0 1px 20px rgba(0,0,0,0.6);
+	box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
 
 }
 .titlebar{
@@ -87,7 +94,7 @@ nav ul a:hover{
 	margin-top: 6px;
 	margin-left: 5px;
 	font-family: lato;
-	font-size: 14px;
+
 }
 .one,.two,.three{
 	width: 15px;
@@ -127,10 +134,18 @@ nav ul a:hover{
 
 .loginform{
 	width: 30%;
-	margin: 10px auto;
+	margin: 25px auto;
 	padding: 5px;	
-	box-shadow: 0 2px 20px rgba(0,0,0,0.4);
-	background: #dcdde1;
+	background: #FFFFFF;
+	border-top:5px solid #2c3e50;
+	box-shadow:
+	  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+	  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+	  0 12.5px 10px rgba(0, 0, 0, 0.06),
+	  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+	  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+	  0 100px 80px rgba(0, 0, 0, 0.12);
+
 
 }
 legend{
@@ -147,7 +162,7 @@ padding: 6px;
 outline: none;
 width: 100%;
 height: 35px;
-border-radius: 10px;
+border-radius: 2px;
 border:1px solid #b2bec3;
 
 
@@ -159,6 +174,7 @@ border:1px solid #b2bec3;
 #inputlabel{
 	display: inline-block;
 	margin-left: 10px;
+	padding: 5px;
 }
 .btn{
 	border: none;
@@ -217,19 +233,32 @@ border:1px solid #b2bec3;
 
 .newnoteform{
 	width: 50%;
-	margin: 10px auto;
+	margin: 25px auto;
 	padding: 5px;
-	box-shadow: 0 2px 20px rgba(0,0,0,0.4);
-	background: #dcdde1;
+	border-top:5px solid #2c3e50;
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+	background: #FFFFFF;
 }
 textarea{
 	padding-left: 10px;
-	font-size: 16px;
+	padding-top:5px;
 	max-width: 100%;
 	width: 100%;
 	height: 200px;
 	max-height: 200px;
 	overflow: scroll;
+	outline: none;
+	border:1px solid #b2bec3;
+}
+textarea:focus{
+	border: 1px solid #2c3e50;
+
 }
 
 
@@ -243,9 +272,14 @@ textarea{
 .shownote table{
 	width: 100%;
 	border-collapse: collapse;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+		box-shadow:
+	  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+	  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+	  0 12.5px 10px rgba(0, 0, 0, 0.06),
+	  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+	  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+	  0 100px 80px rgba(0, 0, 0, 0.12);
 	border-bottom:4px solid #353b48;
-	font-size: 12px;
 }
 td,th{
 	border: 1px solid #353b48;
@@ -256,10 +290,10 @@ th{
 	color: #fff;
 }
 tr:nth-child(even){
-	background: #f5f6fa;
+	background: #F6F8FA;
 }
 tr:nth-child(odd){
-	background: #dcdde1;
+	background: #FFFFFF;
 }
 tr td:first-child,tr th:first-child{
 	border-right: 4px solid #353b48;
