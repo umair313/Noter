@@ -25,10 +25,12 @@ def create_app(config_class=Config):
 	from core.main.routs import noter_main
 	from core.users.routs import noter_users
 	from core.notes.routs import noter_notes
+	from core.errors.handlers import errors
 
 	app.register_blueprint(noter_main)
 	app.register_blueprint(noter_users)
 	app.register_blueprint(noter_notes)
+	app.register_blueprint(errors)
 
 	return app
 
