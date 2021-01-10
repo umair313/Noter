@@ -12,8 +12,7 @@ db=SQLAlchemy()
 login_manager = LoginManager()
 
 #check user access to profile if loged in
-login_manager.login_view = 'login'
-
+login_manager.login_view = 'users.login'
 
 def create_app(config_class=Config):
 
