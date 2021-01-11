@@ -1,8 +1,19 @@
 from datetime import datetime
-from flask import render_template,redirect,url_for,request,Blueprint
-from flask_login import current_user,login_user,login_required,logout_user
+from flask import (
+	render_template,
+	redirect,
+	url_for,
+	request,
+	Blueprint)
+
+from flask_login import (
+	current_user,
+	login_user,
+	login_required,
+	logout_user)
+
 from core.models import Users,Notes
-from core.utils.functions import send_mail
+from core.utils.functions import send_mail,encrypt_password,check_password,is_equal
 from core import db,bcrypt
 
 noter_users=Blueprint('users',__name__)
@@ -21,7 +32,7 @@ def login():
 		password = request.form["password"]
 		user = Users.query.filter_by(email=email).first()
 		if user:
-			if bcrypt.check_password_hash(user.password, password):
+			if check_password(user.password,password):
 				login_user(user)
 				user.last_login_dt=datetime.utcnow()
 				db.session.commit()
@@ -46,14 +57,15 @@ def register():
 		email = request.form["email"]
 		password = request.form["password"]
 		c_password= request.form["confirm_password"]
+
 		user_with_username = Users.query.filter_by(username=username).first()
 		user_with_email = Users.query.filter_by(email=email).first()
+
 		if user_with_email: error['email']= True
 		if user_with_username: error['username']=True
-		if not password == c_password: error['password'] = True
+		if not is_equal(password,c_password): error['password'] = True
 		if not error['email'] and not error['username'] and not error['password']:
-			hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-			user = Users(username=username,email=email,password=hashed_password)
+			user = Users(username=username,email=email,password=encrypt_password(password))
 			db.session.add(user)
 			db.session.commit()
 			return redirect(url_for('users.login'))
@@ -103,7 +115,7 @@ def reset_password(token):
 	if request.method== "POST" and user is not None:
 		if request.form['password'] == request.form["confirm_password"]:
 			password = request.form['password']
-			user.password = bcrypt.generate_password_hash(password).decode("utf-8")
+			user.password = encrypt_password(password)
 			db.session.commit()
 			return redirect(url_for('users.login'))
 		else: 
@@ -118,9 +130,10 @@ def change_password():
 	}
 	user = Users.query.filter_by(id=current_user.id).first()
 	if request.method== "POST":
-		if request.form['password'] == request.form["confirm_password"]:
-			password = request.form['password']
-			user.password = bcrypt.generate_password_hash(password).decode("utf-8")
+		password = request.form['password']
+		c_password = request.form['confirm_password']
+		if is_equal(password,c_password):
+			user.password = encrypt_password(password)
 			db.session.commit()
 			return redirect(url_for('users.profile'))
 		else: error['password']=True
