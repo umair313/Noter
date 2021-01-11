@@ -1,6 +1,19 @@
 # Noter
 Noter is a simple note taking web application writen in Flask
-its my first python project
+
+## What's in it?
+- user can login
+- user can register
+- user can logout :)
+- reset password
+- send email when reset password requested
+- can write note
+	- can provide title for note
+	- can provide content for note
+- can edit/view/delete notes
+- can we all the notes and its dates when created and when modified
+
+if you want to add more functionality you are always welcome. :)
 
 ## Requirements
 
@@ -32,6 +45,20 @@ to run this you may need to set an environment variable `SECRET_KEY` and you can
 key with `screts` module in python or any other of your likes.
 You may also do `export SECRET_KEY="testing"` for testing purpose
 and set variable `FLASK_APP=run.py`.
+
+## Update :
+
+after adding Mail server now it requires environment variable named `MAIL_USERNAME`,`MAIL_PASSWORD` should be set before runing application.
+
+MAIL_USERNAME is your email and MAIL_PASSWORD is password for your provided email.
+it is required for send email through SMPT (Simple MAIL Transfer protocol).
+
+I am using gmail to send email so I set `MAIL_PORT` to 465
+and `MAIL_SERVER` to `'smtp.gmail.com'` if you want to use other service then you can change configuration with provided details.
+<br>
+!Imporant
+in case if using gmail you have to turn on `Less secure app access` from your google account in security if its disable you wont be able so send emails.
+
 
 
 
