@@ -2,6 +2,7 @@ from datetime import datetime
 from flask import render_template,redirect,url_for,request,Blueprint
 from flask_login import current_user,login_user,login_required,logout_user
 from core.models import Users,Notes
+from core.utils.functions import send_mail
 from core import db,bcrypt
 
 noter_users=Blueprint('users',__name__)
@@ -84,7 +85,8 @@ def reset_password_request():
 			token = user.gen_token()
 			data['link'] = f"{url_for('users.reset_password',token=token,_external=True)}"
 			data['email'] = email
-			return render_template('go_to_reset_password.html',title= "Reset Password",data=data)
+			send_mail(data['link'],data['email'])
+			return render_template('msg.html',title= "Reset Password",email=data['email'])
 		else: error["email"]=True
 	return render_template('reset_password_request.html',title="Reset Password Request",error=error,data=data)
 
