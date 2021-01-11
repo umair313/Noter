@@ -60,6 +60,8 @@ nav ul a{
 
 nav ul a:hover{
 	background-color: #34495e;
+	border-top: 2px solid #FFFFFF;
+	padding: 15px 20px;
 }
 /*main*/
 .main{
