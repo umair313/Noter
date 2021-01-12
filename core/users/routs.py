@@ -11,7 +11,7 @@ from flask_login import (
 
 from core.utils.functions import (
 	send_mail,encrypt_password,check_password,is_equal,register_user,get_user,
-	user_exit_by_username,user_exit_by_email,update_user_data,get_notes)
+	user_exit_by_username,user_exit_by_email,update_user_data,get_all_notes)
 
 from core.models import Users
 
@@ -32,7 +32,7 @@ def login():
 		user = get_user(email)
 		if user:
 			if check_password(user.password,password):
-				login_user(user)
+				login_user(user,remember=True)
 				update_user_data(user,'last_login_dt',datetime.now())
 				return redirect('notes')
 			else: error['password'] = True
@@ -71,7 +71,7 @@ def register():
 def profile():
 	if not current_user.is_authenticated:
 		return redirect(url_for('users.login'))
-	notes = get_notes(current_user.id)
+	notes = get_all_notes(current_user.id)
 	numberOfNotes=notes.count()
 	return render_template("profile.html",title = "Profile - Noter",number_of_notes=numberOfNotes)
 
