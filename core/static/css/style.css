@@ -133,6 +133,13 @@ nav ul a:hover{
 }
 
 /*login , register forms*/
+.border{
+	border:1px #e1e4e8 solid !important;
+}
+.box-shadow-medium{
+	 box-shadow: 0 1px 5px rgba(27, 31, 35, 0.15) !important
+
+}
 
 .loginform{
 	width: 30%;
@@ -140,13 +147,15 @@ nav ul a:hover{
 	padding: 5px;	
 	background: #FFFFFF;
 	border-top:5px solid #2c3e50;
-	box-shadow:
+	
+	/*box-shadow:
 	  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 	  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
 	  0 12.5px 10px rgba(0, 0, 0, 0.06),
 	  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
 	  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-	  0 100px 80px rgba(0, 0, 0, 0.12);
+	  0 100px 80px rgba(0, 0, 0, 0.12);*/
+	 
 
 
 }
@@ -238,13 +247,13 @@ border:1px solid #b2bec3;
 	margin: 25px auto;
 	padding: 5px;
 	border-top:5px solid #2c3e50;
-	box-shadow:
+/*	box-shadow:
 		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
 		0 12.5px 10px rgba(0, 0, 0, 0.06),
 		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
 		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-		0 100px 80px rgba(0, 0, 0, 0.12);
+		0 100px 80px rgba(0, 0, 0, 0.12);*/
 	background: #FFFFFF;
 }
 textarea{
@@ -274,14 +283,15 @@ textarea:focus{
 .shownote table{
 	width: 100%;
 	border-collapse: collapse;
-		box-shadow:
+	border-bottom:4px solid #353b48;
+	/*box-shadow:
 	  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 	  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
 	  0 12.5px 10px rgba(0, 0, 0, 0.06),
 	  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
 	  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
 	  0 100px 80px rgba(0, 0, 0, 0.12);
-	border-bottom:4px solid #353b48;
+	*/
 }
 td,th{
 	border: 1px solid #353b48;
