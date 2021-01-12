@@ -13,8 +13,7 @@ from core.utils.functions import (
 	send_mail,encrypt_password,check_password,is_equal,register_user,get_user,
 	user_exit_by_username,user_exit_by_email,update_user_data,get_notes)
 
-from core.models import Users,Notes
-from core import db
+from core.models import Users
 
 noter_users=Blueprint('users',__name__)
 
