@@ -14,8 +14,8 @@ class Users(db.Model,UserMixin):
 	username = db.Column(db.String(20),unique=True,nullable=False)
 	email = db.Column(db.String(120),unique=True,nullable=False)
 	password = db.Column(db.String(20),nullable=False)
-	join_date= db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
-	last_login_dt= db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+	join_date= db.Column(db.DateTime,nullable=False,default=datetime.now)
+	last_login_dt= db.Column(db.DateTime,nullable=False,default=datetime.now)
 	notes = db.relationship('Notes',backref='author',lazy=True)
 	
 	def gen_token(self,expire_sec=1800):
@@ -37,8 +37,8 @@ class Notes(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
 	user_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
 	title = db.Column(db.String(120),nullable=False)
-	cd= db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
-	md= db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+	cd= db.Column(db.DateTime,nullable=False,default=datetime.now)
+	md= db.Column(db.DateTime,nullable=False,default=datetime.now)
 	content = db.Column(db.Text,nullable=False)
 
 	def __repr__(self):
