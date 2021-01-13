@@ -38,27 +38,33 @@ requirements are specified in requirements.txt
 - Werkzeug==1.0.1
 - WTForms==2.3.3
 
-you can install all of them by in from terminal using command :
-```$ pip install -r requirements.txt``` 
+## How to run this?
+to run you first need to install all the requiremnts specified above you can do that by using with following command make sure you in `/Noter` directory in you command-line/CMD
 
-to run this you may need to set an environment variable `SECRET_KEY` and you can generate secret 
-key with `screts` module in python or any other of your likes.
-You may also do `export SECRET_KEY="testing"` for testing purpose
-and set variable `FLASK_APP=run.py`.
+<br>command : ```$ pip install -r requirements.txt``` <br>
+it will install the requiremetns.<br>
+now you need to set some envionment variables in your CMD type the following commands.<br>
+<br>
+For windows user
+`set FLASK_APP=run.py`
+Your Email and password for email server with out these you wont be able send email for reset password
 
-## Update :
+`setx MAIL_USERNAME "your gmail"` 
+`setx MAIL_PASSWORD "YOUR gmail password"`
 
-after adding Mail server now it requires environment variable named `MAIL_USERNAME`,`MAIL_PASSWORD` should be set before runing application.
-
-MAIL_USERNAME is your email and MAIL_PASSWORD is password for your provided email.
-it is required for send email through SMPT (Simple MAIL Transfer protocol).
-
-I am using gmail to send email so I set `MAIL_PORT` to 465
-and `MAIL_SERVER` to `'smtp.gmail.com'` if you want to use other service then you can change configuration with provided details.
 <br>
 !Imporant
-in case if using gmail you have to turn on `Less secure app access` from your google account in security if its disable you wont be able so send emails.
+in case if using gmail you have to turn on [Less secure app access](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
+
+For linux users
+`export FLASK_APP=run.py`
+Your Email and password for email server with out these you wont be able send email for reset password
+
+`export MAIL_USERNAME="your gmail"` 
+`export MAIL_PASSWORD="YOUR gmail password"`
 
 
+then command `python run.py` will run the server.<br>
+you can open it in your browser by visiting [https://localhost:5000/]
 
 
