@@ -6,10 +6,10 @@ from flask_mail import Mail
 from core.Config import Config
 
 
-
-
 bcrypt=Bcrypt()
 db=SQLAlchemy()
+# no track modification
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 login_manager = LoginManager()
 mail=Mail()
 

@@ -3,3 +3,4 @@
 */__pycache__/
 
 *.db
+set_variables.bat

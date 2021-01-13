@@ -16,6 +16,7 @@
 					<div class="actions">
 						<a class="action-btn btn-edit" href="{{url_for('notes.edit_note',id=note.id,title=note.title)}}">Edit</a>
 						<a class="action-btn btn-delete" href="{{url_for('notes.delete_note',id=note.id,title=note.title)}}">Delete</a>
+						<a class="action-btn btn-view" href="javascript:history.back()">Back</a>
 					</div>
 				</div>
 			</form>
