@@ -54,13 +54,13 @@ Your Email and password for email server with out these you wont be able send em
 
 <br>
 !Imporant
-in case if using gmail you have to turn on ['Less secure app access'](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
+in case if using gmail you have to turn on [Less secure app access](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
 
 For linux users
 `export FLASK_APP=run.py`
 Your Email and password for email server with out these you wont be able send email for reset password
 
-`export MAIL_USERNAME="your gmail"` 
+`export MAIL_USERNAME="your gmail"` <br>
 `export MAIL_PASSWORD="YOUR gmail password"`
 
 
