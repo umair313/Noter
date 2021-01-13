@@ -5,10 +5,10 @@ from flask_login import LoginManager
 from core.Config import Config
 
 
-
-
 bcrypt=Bcrypt()
 db=SQLAlchemy()
+# no track modification
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 login_manager = LoginManager()
 
 #check user access to profile if loged in
