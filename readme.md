@@ -1,15 +1,17 @@
 # Noter
+
 Noter is a simple note taking web application writen in Flask
 
 ## What's in it?
+
 - user can login
 - user can register
 - user can logout :)
 - reset password
 - send email when reset password requested
 - can write note
-	- can provide title for note
-	- can provide content for note
+  - can provide title for note
+  - can provide content for note
 - can edit/view/delete notes
 - can we all the notes and its dates when created and when modified
 
@@ -17,7 +19,8 @@ if you want to add more functionality you are always welcome. :)
 
 ## Requirements
 
-requirements are specified in requirements.txt 
+requirements are specified in requirements.txt
+
 - bcrypt==3.2.0
 - cffi==1.14.4
 - click==7.1.2
@@ -39,12 +42,17 @@ requirements are specified in requirements.txt
 - WTForms==2.3.3
 
 ## How to run this?
+
 to run you first need to install all the requiremnts specified above you can do that by using with following command make sure you in `/Noter` directory in you command-line/CMD
 
-<br>command : ```$ pip install -r requirements.txt``` <br>
+<br>
+
+command : ```$ pip install -r requirements.txt``` <br>
 it will install the requiremetns.<br>
 now you need to set some envionment variables in your CMD type the following commands.<br>
+
 <br>
+
 For windows user
 `set FLASK_APP=run.py`
 Your Email and password for email server with out these you wont be able send email for reset password
@@ -53,8 +61,11 @@ Your Email and password for email server with out these you wont be able send em
 `setx MAIL_PASSWORD "YOUR gmail password"`
 
 <br>
+
 !Imporant
-in case if using gmail you have to turn on [Less secure app access](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
+in case if using gmail you have to turn on
+[Less secure app](https://myaccount.google.com/lesssecureapps)
+from your google account in security section if its disable you wont be able so send emails.
 
 For linux users
 `export FLASK_APP=run.py`
@@ -65,6 +76,6 @@ Your Email and password for email server with out these you wont be able send em
 
 
 then command `python run.py` will run the server.<br>
-you can open it in your browser by visiting [https://localhost:5000/]
+you can open it in your browser by visiting [https://localhost:5000/](https://localhost:5000/)
 
 
