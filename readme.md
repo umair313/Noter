@@ -49,12 +49,12 @@ For windows user
 `set FLASK_APP=run.py`
 Your Email and password for email server with out these you wont be able send email for reset password
 
-`setx MAIL_USERNAME "your gmail"` 
+`setx MAIL_USERNAME "your gmail"` <br>
 `setx MAIL_PASSWORD "YOUR gmail password"`
 
 <br>
 !Imporant
-in case if using gmail you have to turn on [Less secure app access](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
+in case if using gmail you have to turn on ['Less secure app access'](https://myaccount.google.com/lesssecureapps) from your google account in security section if its disable you wont be able so send emails.
 
 For linux users
 `export FLASK_APP=run.py`
