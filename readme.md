@@ -39,7 +39,7 @@ requirements are specified in requirements.txt
 - WTForms==2.3.3
 
 you can install all of them by in from terminal using command :
-```$ pip install requirements.txt``` 
+```$ pip install -r requirements.txt``` 
 
 to run this you may need to set an environment variable `SECRET_KEY` and you can generate secret 
 key with `screts` module in python or any other of your likes.
