@@ -1,4 +1,5 @@
 import os, secrets
+
 class Config:
 	SECRET_KEY = secrets.token_hex(16)
 	SQLALCHEMY_DATABASE_URI = "sqlite:///note.db"
@@ -9,4 +10,3 @@ class Config:
 	MAIL_SERVER = 'smtp.gmail.com'
 	MAIL_USE_SSL = True
 	MAIL_USE_TLS = False
-
