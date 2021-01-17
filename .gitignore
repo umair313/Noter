@@ -1,6 +1,6 @@
 *__pycache__
 *__pycache__/
 */__pycache__/
-
+.env
 *.db
-set_variables.bat
+set_variables.bat*.env
