@@ -107,36 +107,36 @@ def send_mail(url,email):
 		<html>
 		<head>
 	   <style type="text/css">
-	   *{str('{')}
+	   *{{
 	         padding: 0;
 	         margin: 0;
-	      {str('}')}
-	      .container{str('{')}
+	      }}
+	      .container{{
 
 	         width: 70%;
 	         margin: 0 auto;
-	      {str('}')}
-	      .header{str('{')}
+	      }}
+	      .header{{
 	         width: 100%;
 	         text-align: center;
 	         background: #2c3e50;
-	     {str('}')}
-	      .header #brand{str('{')}
+	     }}
+	      .header #brand{{
 	         color: #fff;
 	         padding: 10px;
 	         line-height: 50px;
 	         font-size: 40px;
-	      {str('}')}
-	      a{str('{')}
+	      }}
+	      a{{
 	         text-decoration: none;
-	      {str('}')}
-	      .body{str('{')}
+	      }}
+	      .body{{
 	         background: #F6F8FA;
 	         width: 100%;
 	         margin: 0 auto;
 	         text-align: center;
-	      {str('}')}
-	      .body p#reset_pass{str('{')}
+	      }}
+	      .body p#reset_pass{{
 	         padding-top: 72px;
 	        -ms-text-size-adjust: 100%;
 	        -webkit-font-smoothing: antialiased;
@@ -150,9 +150,9 @@ def send_mail(url,email):
 	        font-weight: 600;
 	        line-height: 52px;
 	        mso-line-height-rule: exactly;
-	   {str('}')}
+	   }}
 
-	   #msg,#ignore{str('{')}
+	   #msg,#ignore{{
 	   		width:90%;
 	      padding-top: 10px;
 	      text-align: left;
@@ -160,19 +160,19 @@ def send_mail(url,email):
 	      margin-left: 20px;
 
 
-	   {str('}')}
-	      .btn{str('{')}
+	   }}
+	      .btn{{
 	         background: #2c3e50;
 	         color: #FFFFFF;
 	         padding: 10px;
 	         display: inline-block;
 	         margin: 15px 0;
 	         border-radius: 4px;
-	      {str('}')}
+	      }}
 
-	      a[href]{str('{')}
+	      a[href]{{
 	      color: #FFFFFF;
-	      {str('}')}
+	      }}
 	   </style>
 	</head>
 
