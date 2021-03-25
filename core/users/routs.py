@@ -22,10 +22,10 @@ def login():
 	if current_user.is_authenticated:
 		return redirect(url_for('notes.notes'))
 	error = {
-	"user" : False,
-	"password" : False
+	"user" : True,
+	"password" : True
 	}
-
+	email=""
 	if request.method == "POST":
 		email = request.form["email"]
 		password = request.form["password"]
@@ -35,10 +35,10 @@ def login():
 				login_user(user,remember=True)
 				update_user_data(user,'last_login_dt',datetime.now())
 				return redirect('notes')
-			else: error['password'] = True
+			else: error['password'] = False
 		else:
-			error['user'] = True
-	return render_template("login.html",title= "Login - Noter" ,error=error)
+			error['user'] = False
+	return render_template("login.html",title= "Login - Noter" ,error=error,email=email)
 
 
 @noter_users.route('/register',methods=["POST","GET"])
