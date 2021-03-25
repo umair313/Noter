@@ -6,17 +6,22 @@
 					<legend>User Login</legend>
 
 					<div class="formgroup">
+					{% if not error['user'] %}
 					<label id="inputlabel">Email</label>
-					<input type="email" name="email" id="input" required>
-					{% if error['user'] %}
-							<small class="form-error">Email or password is incorrect</small>		
+					<input type="email" name="email" id="input" value="{{email}}" required>
+							<small class="form-error">Please check your email</small>		
+						{%else%}
+						<label id="inputlabel">Email</label>
+						<input type="email" name="email" id="input" required>		
+					
 						{% endif %}
+						
 				</div>
 				<div class="formgroup">
 					<label id="inputlabel">Password</label>
 					<input type="Password" name="password" id="input">
-					{% if error['password'] %}
-							<small class="form-error">Email or password is incorrect</small>		
+					{% if not error['password'] %}
+							<small class="form-error">Incorrect Password</small>		
 					{% endif %}
 
 				</div>
